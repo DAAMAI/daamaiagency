@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAAM Agency — A.I. Creative for Luxury Campaigns</title>
+<meta name="description" content="DAAM is an AI-native creative agency engineering luxury advertising campaigns. Hudson Valley · NYC · Chicago · LA · London.">
+<meta name="author" content="DAAM Agency">
+
+<!-- Open Graph / social share preview -->
+<meta property="og:title" content="DAAM Agency — A.I. Creative for Luxury Campaigns">
+<meta property="og:description" content="AI-native creative agency building luxury advertising campaigns. Made by hand, moved by machine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daamaiagency.com">
+<meta property="og:site_name" content="DAAM Agency">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DAAM Agency — A.I. Creative for Luxury Campaigns">
+<meta name="twitter:description" content="AI-native creative agency building luxury advertising campaigns.">
+
+<!-- Favicon: the DA + blue dot mark rendered as SVG -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f2ede4'/%3E%3Ctext x='10' y='78' font-family='Georgia, serif' font-size='70' font-style='italic' font-weight='500' fill='%230b1d24'%3EDA%3C/text%3E%3Ccircle cx='82' cy='28' r='7' fill='%236f94a7'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500&family=Shadows+Into+Light&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b1d24;
+    --deep: #08161c;
+    --bone: #f2ede4;
+    --paper: #ebe4d6;
+    --seafoam: #9fb8ac;
+    --pale: #cfd9cf;
+    --rust: #b4522a;
+    --ochre: #c98c3f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    cursor: none;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.11 0 0 0 0 0.14 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  .cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ink);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    opacity: 0.5;
+  }
+  .cursor.expand { width: 6px; height: 6px; background: var(--rust); }
+  .cursor-ring.expand { width: 70px; height: 70px; border-color: var(--rust); opacity: 0.8; }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: multiply;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    position: relative;
+  }
+  .logo span {
+    font-family: 'Caveat', cursive;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--rust);
+    position: absolute;
+    top: -8px;
+    right: -28px;
+    transform: rotate(-8deg);
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  nav ul a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--rust);
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  nav ul a:hover::after { width: 100%; }
+
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 4rem;
+    overflow: hidden;
+  }
+
+  .fluid-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 12vw, 11rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.025em;
+    position: relative;
+    z-index: 3;
+    max-width: 1500px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+  .hero h1 .scribble {
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 .scribble svg {
+    position: absolute;
+    bottom: -14px;
+    left: -6px;
+    width: 108%;
+    height: 22px;
+    overflow: visible;
+  }
+  .hero h1 .scribble path {
+    fill: none;
+    stroke: var(--rust);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 2.5s 1.2s ease-out forwards;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .hero-foot {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.65;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .hero-tag .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--rust);
+    border-radius: 50%;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+  }
+
+  .hero-note {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--rust);
+    transform: rotate(-3deg);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .reveal-1 { animation-delay: 0.2s; }
+  .reveal-2 { animation-delay: 0.5s; }
+  .reveal-3 { animation-delay: 0.9s; }
+  @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+
+  section { position: relative; z-index: 3; }
+
+  .section-head {
+    padding: 8rem 2.5rem 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--rust);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--rust);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .section-title em { font-style: italic; }
+
+  .workflow {
+    padding: 2rem 2.5rem 10rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .flow-line {
+    position: absolute;
+    top: 130px;
+    left: 2.5rem;
+    right: 2.5rem;
+    pointer-events: none;
+  }
+  .flow-line svg {
+    width: 100%;
+    height: 80px;
+    overflow: visible;
+  }
+  .flow-line path {
+    fill: none;
+    stroke: var(--rust);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+  }
+  .flow-line.active path {
+    animation: flow 3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  @keyframes flow { to { stroke-dashoffset: 0; } }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    position: relative;
+  }
+
+  .step {
+    position: relative;
+    padding-top: 1rem;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 3.5rem;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+
+  .step-dot {
+    position: absolute;
+    top: 76px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--rust);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .step.visible .step-dot { opacity: 1; }
+
+  .step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  .step h3 em { font-style: italic; }
+  .step p {
+    font-size: 1rem;
+    line-height: 1.55;
+    opacity: 0.75;
+    max-width: 280px;
+  }
+
+  .work {
+    padding: 0 2.5rem 8rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .work-card {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    overflow: hidden;
+  }
+
+  .work-card.feature { grid-column: span 4; }
+  .work-card.half { grid-column: span 3; }
+  .work-card.third { grid-column: span 2; }
+
+  .work-img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--paper);
+    margin-bottom: 1rem;
+  }
+
+  .work-card.feature .work-img { aspect-ratio: 16 / 10; }
+  .work-card.half .work-img { aspect-ratio: 4 / 5; }
+  .work-card.third .work-img { aspect-ratio: 3 / 4; }
+
+  .work-img .placeholder {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .work-img .placeholder svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .work-img .real-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(1.04);
+    z-index: 1;
+  }
+
+  .work-card:hover .real-image {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .work-card:hover .placeholder {
+    opacity: 0;
+  }
+
+  .work-card.no-image:hover .placeholder {
+    opacity: 1;
+  }
+
+  .work-meta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 1rem;
+    position: relative;
+    min-height: 1.4rem;
+  }
+
+  .work-cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.6;
+    white-space: nowrap;
+    transition: opacity 0.5s ease;
+  }
+
+  .work-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--rust);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(8px);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .work-card:hover .work-cat {
+    opacity: 0;
+  }
+
+  .work-card:hover .work-name {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .contact {
+    padding: 6rem 2.5rem 8rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--rust);
+    margin-bottom: 2rem;
+  }
+
+  .contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
+  }
+  .contact h2 em { font-style: italic; }
+
+  .contact-email {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .contact-email:hover {
+    color: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .contact-social {
+    margin-top: 2.5rem;
+  }
+
+  .contact-social a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.65;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .contact-social a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--rust);
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .contact-social a:hover {
+    color: var(--rust);
+    opacity: 1;
+  }
+
+  .contact-social a:hover::after {
+    width: 100%;
+  }
+
+  .contact-note {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--rust);
+    margin-top: 2.5rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  footer {
+    border-top: 1px solid rgba(11, 29, 36, 0.15);
+    padding: 4rem 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(6rem, 14vw, 12rem);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0;
+    color: #000;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+  }
+
+  .footer-logo .dot {
+    position: absolute;
+    top: 0.15em;
+    right: -0.22em;
+    width: 0.1em;
+    height: 0.1em;
+    border-radius: 50%;
+    background: #6f94a7;
+  }
+
+  footer a {
+    color: var(--ink);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  footer a:hover { color: var(--rust); }
+
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--ink);
+    pointer-events: none;
+    z-index: 5;
+    animation: ripple-out 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes ripple-out {
+    0% { width: 0; height: 0; opacity: 0.5; }
+    100% { width: 300px; height: 300px; opacity: 0; transform: translate(-50%, -50%); }
+  }
+
+  @media (max-width: 1000px) {
+    .steps { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
+    .flow-line { display: none; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .work-card.feature, .work-card.half, .work-card.third { grid-column: span 2; }
+    .work-card.feature .work-img { aspect-ratio: 4 / 3; }
+  }
+
+  @media (max-width: 700px) {
+    nav ul { display: none; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+    * { cursor: auto !important; }
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .section-head, .workflow, .work, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .steps { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-card.feature, .work-card.half, .work-card.third { grid-column: span 1; }
+    footer { padding: 3rem 1.5rem; justify-content: center; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <div class="logo reveal reveal-1">DAAM<span>agency</span></div>
+  <ul class="reveal reveal-2">
+    <li><a href="#work">Work</a></li>
+    <li><a href="https://instagram.com/daamaiagency" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="mailto:daamaiagency@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <svg class="fluid-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <filter id="turb">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="3">
+          <animate attributeName="baseFrequency" dur="32s" values="0.012;0.018;0.012" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="45"/>
+      </filter>
+      <radialGradient id="wash1" cx="30%" cy="40%" r="50%">
+        <stop offset="0%" stop-color="#9fb8ac" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#9fb8ac" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="wash2" cx="75%" cy="70%" r="40%">
+        <stop offset="0%" stop-color="#b4522a" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#b4522a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="wash3" cx="55%" cy="25%" r="35%">
+        <stop offset="0%" stop-color="#0b1d24" stop-opacity="0.28"/>
+        <stop offset="100%" stop-color="#0b1d24" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g filter="url(#turb)">
+      <ellipse cx="500" cy="400" rx="600" ry="400" fill="url(#wash1)"/>
+      <ellipse cx="1200" cy="650" rx="500" ry="350" fill="url(#wash2)"/>
+      <ellipse cx="900" cy="250" rx="400" ry="250" fill="url(#wash3)"/>
+    </g>
+  </svg>
+
+  <h1>
+    <span class="reveal reveal-1">A.I. creative</span><br>
+    <span class="reveal reveal-2">for <em>luxury</em> campaigns.</span>
+  </h1>
+
+  <div class="hero-foot">
+    <div class="hero-tag reveal reveal-3"><span class="dot"></span>Hudson Valley · NYC · Chicago · LA · London</div>
+    <div class="hero-note reveal reveal-3">made by hand, moved by machine</div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-head">
+  </div>
+
+  <div class="work">
+    <div class="work-grid">
+
+      <a class="work-card feature" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt1"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="1"/><feDisplacementMap in="SourceGraphic" scale="55"/></filter>
+                <radialGradient id="pg1" cx="40%" cy="45%" r="60%">
+                  <stop offset="0%" stop-color="#9fb8ac" stop-opacity="0.9"/>
+                  <stop offset="60%" stop-color="#cfd9cf" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="1"/>
+                </radialGradient>
+                <radialGradient id="pg1b" cx="70%" cy="70%" r="40%">
+                  <stop offset="0%" stop-color="#b4522a" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#b4522a" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="800" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt1)">
+                <ellipse cx="320" cy="225" rx="380" ry="260" fill="url(#pg1)"/>
+                <ellipse cx="560" cy="350" rx="220" ry="180" fill="url(#pg1b)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="images/work-01.png" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Beauty</span>
+          <span class="work-name">River</span>
+        </div>
+      </a>
+
+      <a class="work-card third" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt2"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="40"/></filter>
+                <radialGradient id="pg2" cx="50%" cy="50%" r="70%">
+                  <stop offset="0%" stop-color="#0b1d24" stop-opacity="0.5"/>
+                  <stop offset="60%" stop-color="#9fb8ac" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt2)">
+                <ellipse cx="200" cy="250" rx="250" ry="300" fill="url(#pg2)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="images/work-02.jpeg" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Fashion</span>
+          <span class="work-name">Still Water</span>
+        </div>
+      </a>
+
+      <a class="work-card half" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt3"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="50"/></filter>
+                <radialGradient id="pg3" cx="35%" cy="60%" r="55%">
+                  <stop offset="0%" stop-color="#c98c3f" stop-opacity="0.6"/>
+                  <stop offset="70%" stop-color="#ebe4d6" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="1"/>
+                </radialGradient>
+                <radialGradient id="pg3b" cx="75%" cy="30%" r="40%">
+                  <stop offset="0%" stop-color="#9fb8ac" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#9fb8ac" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="600" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt3)">
+                <ellipse cx="220" cy="300" rx="280" ry="220" fill="url(#pg3)"/>
+                <ellipse cx="450" cy="150" rx="220" ry="180" fill="url(#pg3b)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=80" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Ecom</span>
+          <span class="work-name">Flow</span>
+        </div>
+      </a>
+
+      <a class="work-card half" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt4"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="11"/><feDisplacementMap in="SourceGraphic" scale="60"/></filter>
+                <radialGradient id="pg4" cx="60%" cy="40%" r="50%">
+                  <stop offset="0%" stop-color="#0b1d24" stop-opacity="0.55"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="0.95"/>
+                </radialGradient>
+                <radialGradient id="pg4b" cx="25%" cy="75%" r="40%">
+                  <stop offset="0%" stop-color="#b4522a" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#b4522a" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="600" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt4)">
+                <ellipse cx="360" cy="200" rx="280" ry="220" fill="url(#pg4)"/>
+                <ellipse cx="150" cy="375" rx="200" ry="150" fill="url(#pg4b)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&q=80" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Product</span>
+          <span class="work-name">Tide</span>
+        </div>
+      </a>
+
+      <a class="work-card half" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt5"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="5"/><feDisplacementMap in="SourceGraphic" scale="35"/></filter>
+                <radialGradient id="pg5" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#b4522a" stop-opacity="0.5"/>
+                  <stop offset="50%" stop-color="#c98c3f" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt5)">
+                <ellipse cx="200" cy="230" rx="250" ry="280" fill="url(#pg5)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Beauty</span>
+          <span class="work-name">Ocean</span>
+        </div>
+      </a>
+
+      <a class="work-card half" href="#">
+        <div class="work-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="pt6"><feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="15"/><feDisplacementMap in="SourceGraphic" scale="45"/></filter>
+                <radialGradient id="pg6" cx="40%" cy="55%" r="60%">
+                  <stop offset="0%" stop-color="#9fb8ac" stop-opacity="0.75"/>
+                  <stop offset="60%" stop-color="#cfd9cf" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#ebe4d6" stop-opacity="1"/>
+                </radialGradient>
+                <radialGradient id="pg6b" cx="70%" cy="25%" r="35%">
+                  <stop offset="0%" stop-color="#8a7ba0" stop-opacity="0.38"/>
+                  <stop offset="100%" stop-color="#8a7ba0" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <rect width="400" height="500" fill="#ebe4d6"/>
+              <g filter="url(#pt6)">
+                <ellipse cx="160" cy="275" rx="240" ry="220" fill="url(#pg6)"/>
+                <ellipse cx="280" cy="125" rx="150" ry="130" fill="url(#pg6b)"/>
+              </g>
+            </svg>
+          </div>
+          <img class="real-image" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="">
+        </div>
+        <div class="work-meta">
+          <span class="work-cat">Fashion</span>
+          <span class="work-name">Rain</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div class="contact-label">Get in touch</div>
+    <h2>Let's make something <em>that moves.</em></h2>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">DA<span class="dot"></span></div>
+</footer>
+
+<script>
+  // Hide any images that fail to load and keep the placeholder visible
+  document.querySelectorAll('.real-image').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.display = 'none';
+      const card = img.closest('.work-card');
+      if (card) card.classList.add('no-image');
+    });
+    // Also if already broken on script run
+    if (img.complete && img.naturalWidth === 0) {
+      img.style.display = 'none';
+      const card = img.closest('.work-card');
+      if (card) card.classList.add('no-image');
+    }
+  });
+
+  const cursor = document.querySelector('.cursor');
+  const ring = document.querySelector('.cursor-ring');
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .work-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('expand');
+      ring.classList.add('expand');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('expand');
+      ring.classList.remove('expand');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = e.clientX + 'px';
+    ripple.style.top = e.clientY + 'px';
+    document.body.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 2000);
+  });
+
+  const fluidBg = document.querySelector('.fluid-bg');
+  document.addEventListener('mousemove', (e) => {
+    if (!fluidBg) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    fluidBg.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  const sectionObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.work-card, .section-head').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = `opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s`;
+    sectionObs.observe(el);
+  });
+</script>
+
+</body>
+</html>
